@@ -5,27 +5,27 @@ This Project will contain recipes and ingredients for speciall cocktails.
 
  <hr>
 
-Cocktails Menu
-
-<b> Preparation </b>
-
+Cocktails Menu Branches : 
+<ul> <b> Preparation </b></ul>
 <li> clear unnecessary react files </li>
 <li> install required tools : <br> (Client) : npm install axios moment redux redux-thunk react-redux <br> (Server) : npm install body-parser cors express mongoose nodemon  </li>
-
-<b> Setup </b>
+<br>
+<ul><b> Setup </b> </ul>
 
 <li> MongoDB preparation </li>
 <li> Express configuration </li>
-
-<b> Routes </b>
+<br>
+<ul> <b>Routes</b> </ul>
 
 <p> I'll create dummy route to simulate API call - next I should create Model,Controllers.. Backend Structure </p>
-<image> Dummy Route </image>
 
-<b> Backend </b>
+![dummyRoute](https://user-images.githubusercontent.com/22063155/136864336-95328bdb-50f6-4848-87eb-54bf12d4eab3.JPG)
+
+<br>
+<ul> <b>Backend </b></ul>
 
 <p> create backend structure and CRUD  </p>
-
-<b> Frontend </b>
+<br>
+<ul> <b>Frontend</b> </ul>
 
 <p> create form for cocktail create, edit button to update and delete button   </p>
