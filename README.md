@@ -25,3 +25,7 @@ Cocktails Menu
 <b> Backend </b>
 
 <p> create backend structure and CRUD  </p>
+
+<b> Frontend </b>
+
+<p> create form for cocktail create, edit button to update and delete button   </p>
