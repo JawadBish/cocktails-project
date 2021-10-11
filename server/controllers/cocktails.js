@@ -11,3 +11,16 @@ export const getAllCocktails = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+
+
+
+export const createCocktail = async (req, res) => {
+    const cocktail = req.body; //this we will get from frontend form
+    const newCocktail = new InstanceCocktail(cocktail);
+    try {
+        await newCocktail.save();
+        res.status(201).json(newCocktail);
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}

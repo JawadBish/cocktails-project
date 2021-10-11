@@ -5,10 +5,10 @@ const router = express.Router();
 
 //Get ALL COCKTAILS
 router.get('/', getAllCocktails);
-router.get('/:id', getOneCocktail);
 router.post('/', createCocktail);
-router.patch('/:id', auth, updateCocktail);
-router.delete('/:id', auth, deleteCocktail);
+// router.get('/:id', getOneCocktail);
+// router.patch('/:id', auth, updateCocktail);
+// router.delete('/:id', auth, deleteCocktail);
 
 
 
