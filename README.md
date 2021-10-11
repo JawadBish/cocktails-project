@@ -21,3 +21,7 @@ Cocktails Menu
 
 <p> I'll create dummy route to simulate API call - next I should create Model,Controllers.. Backend Structure </p>
 <image> Dummy Route </image>
+
+<b> Backend </b>
+
+<p> create backend structure and CRUD  </p>

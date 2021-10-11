@@ -1,10 +1,12 @@
 import express from 'express';
+import { getAllCocktails } from '../controllers/cocktails.js';
 
 const router = express.Router();
 
+//Get ALL COCKTAILS
+router.get('/', getAllCocktails);
 
-router.get('/', (req, res) => {
-    res.send("Dummy  getAllCocktails API");
-});
+
+
 
 export default router;
