@@ -11,5 +11,3 @@ Cocktails Menu
 
 <li> clear unnecessary react files </li>
 <li> install required tools : <br> (Client) : npm install axios moment redux redux-thunk react-redux <br> (Server) : npm install body-parser cors express mongoose nodemon  </li>
-<li> MongoDB preparation</li>
-<li> Express configuration </li>
