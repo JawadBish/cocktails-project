@@ -3,13 +3,14 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+import cocktailRoutes from './routes/cocktails.js';
 
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-
+app.use('/cocktails', cocktailRoutes)
 /*
 - goto https://www.mongodb.com/cloud/atlas -> Signin -> create a Cluster 
 - Database Access -> create new database -> create Password Authentication

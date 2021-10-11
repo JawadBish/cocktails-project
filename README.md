@@ -16,3 +16,8 @@ Cocktails Menu
 
 <li> MongoDB preparation </li>
 <li> Express configuration </li>
+
+<b> Routes </b>
+
+<p> I'll create dummy route to simulate API call - next I should create Model,Controllers.. Backend Structure </p>
+<image> Dummy Route </image>
