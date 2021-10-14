@@ -7,20 +7,20 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { likeCocktail, deleteCocktail } from '../../../actions/cocktails';
-
+import cocktailGif from '../../../images/cocktail.gif';
 const Cocktail = ({ cocktail, setCurrentId }) => {
     const dispatch = useDispatch();
     const classes = useStyles();
 
     return (
         <Card className={classes.card}>
-            <CardMedia className={classes.media} image={cocktail.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={cocktail.title} />
+            <CardMedia className={classes.media} image={cocktail.selectedFile || cocktailGif} title={cocktail.title} />
             <div className={classes.overlay}>
                 <Typography variant="h6">{cocktail.name}</Typography>
                 <Typography variant="body2">{moment(cocktail.createdAt).fromNow()} || {cocktail.creator} </Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="default" /></Button>
+                <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="medium" /></Button>
             </div>
             <div className={classes.recipe}>
                 <Typography variant="body2" color="textSecondary" component="h2">{cocktail.tags.map((tag) => `#${tag} `)}</Typography>
