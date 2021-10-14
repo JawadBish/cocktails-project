@@ -28,14 +28,12 @@ export const createCocktail = async (req, res) => {
 }
 
 export const updateCocktail = async (req, res) => {
-    const { id } = req.params;
-    const { name, recipe, ingredients, creator, selectedFile, tags } = req.body;
+    const { id: _id } = req.params;
+    //const { name, recipe, ingredients, creator, selectedFile, tags } = req.body;
+    const cocktail = req.body;
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No Cocktail with id: ${id}`);
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Cocktail with id: ${id}`);
-
-    const updatedCocktail = { name, recipe, ingredients, creator, tags, selectedFile, _id: id };
-
-    await InstanceCocktail.findByIdAndUpdate(id, updatedCocktail, { new: true });
+    const updatedCocktail = await InstanceCocktail.findByIdAndUpdate(_id, cocktail, { new: true });
 
     res.json(updatedCocktail);
 }

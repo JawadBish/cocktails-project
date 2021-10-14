@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Grid, CircularProgress } from '@material-ui/core';
 import useStyles from './styles'
 
-const Cocktails = () => {
+const Cocktails = ({ setCurrentId }) => {
     const cocktails = useSelector((state) => state.cocktails);
     const classes = useStyles();
     console.log(cocktails);
@@ -27,7 +27,7 @@ const Cocktails = () => {
             <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
                 {cocktails?.map((cocktail) => (
                     <Grid key={cocktail._id} item xs={12} sm={12} md={6} lg={4}>
-                        <Cocktail cocktail={cocktail} />
+                        <Cocktail cocktail={cocktail} setCurrentId={setCurrentId} />
                     </Grid>
                 ))
 
