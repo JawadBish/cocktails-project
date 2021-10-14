@@ -26,6 +26,11 @@ Cocktails Menu Branches :
 
 <p> create backend structure and CRUD  </p>
 <br>
+
+<ul> <b>UI Design</b> </ul>
+
+<p> App design and add styles. before working on Form and  App functionality </p>
+<br>
 <ul> <b>Frontend</b> </ul>
 <p> create form for cocktail create, edit button to update and delete button   </p>
 
