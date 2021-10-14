@@ -8,7 +8,7 @@ This Project will contain recipes and ingredients for speciall cocktails.
 Cocktails Menu Branches : 
 <ul> <b> Preparation </b></ul>
 <li> clear unnecessary react files </li>
-<li> install required tools : <br> (Client) : npm install axios moment redux redux-thunk react-redux <br> (Server) : npm install body-parser cors express mongoose nodemon  </li>
+<li> install required tools : <br> (Client) : npm install axios moment redux redux-thunk react-redux react-file-base64 <br> (Server) : npm install body-parser cors express mongoose nodemon  </li>
 <br>
 <ul><b> Setup </b> </ul>
 

@@ -18,7 +18,7 @@ app.use('/cocktails', cocktailRoutes)
 - Connect cluster -> connect your application -> then copy connection string to CONNECTION_URL in .env file.
 */
 
-const CONNECTION_URL = 'mongodb+srv://jawadbisharat:Nazareth2020@cluster0.wq5f9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://jawadbisharat:Nazareth2020@cluster0.4ewcc.mongodb.net/CocktailDB?retryWrites=true&w=majority';
 
 const PORT1 = (process.env.PORT || 5000);
 

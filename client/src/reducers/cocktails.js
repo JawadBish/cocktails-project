@@ -1,12 +1,12 @@
-import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE  } from '../constants/actionTypes'
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from '../constants/actionTypes'
 
-const cocktailsReducer = (cocktails = [] ,action) => {
-    switch(action.type) {
-        case FETCH_ALL: 
-        return {           
-            ...cocktails,
-            cocktails: action.payload.data,   
-        };
+const cocktailsReducer = (cocktails = [], action) => {
+    switch (action.type) {
+        case FETCH_ALL:
+            return action.payload
+
+        case CREATE:
+            return [...cocktails, action.payload];
         default:
             return cocktails;
     };
