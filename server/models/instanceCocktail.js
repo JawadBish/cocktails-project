@@ -9,9 +9,9 @@ const cocktailSchema = mongoose.Schema({
     creator: String,
     selectedFile: String,
     tags: [String],
-    likes: {
-        type: [String],
-        default: [],
+    likeCount: {
+        type: Number,
+        default: 0,
     },
     createdAt: {
         type: Date,

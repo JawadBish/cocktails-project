@@ -5,22 +5,22 @@ import { Grid, CircularProgress } from '@material-ui/core';
 import useStyles from './styles'
 
 const Cocktails = () => {
-    const { cocktails, isLoading } = useSelector((state) => state.cocktails);
+    const cocktails = useSelector((state) => state.cocktails);
     const classes = useStyles();
     console.log(cocktails);
 
-    if (isLoading) {
-        return (<>
-            <CircularProgress />
-        </>)
-    }
-    else {
-        if (cocktails?.length < 1 || cocktails === 'undefined') {
-            return (<>
-                <h1 className={classes.h1} style={{ backgroundColor: '#FFFFFF', color: '#990000' }}>No Cocktails Found</h1>
-            </>)
-        }
-    }
+    // if (isLoading) {
+    //     return (<>
+    //         <CircularProgress />
+    //     </>)
+    // }
+    // else {
+    //     if (cocktails?.length < 1 || cocktails === 'undefined') {
+    //         return (<>
+    //             <h1 className={classes.h1} style={{ backgroundColor: '#FFFFFF', color: '#990000' }}>No Cocktails Found</h1>
+    //         </>)
+    //     }
+    // }
 
     return (
         cocktails?.length < 1 ? <CircularProgress /> : (

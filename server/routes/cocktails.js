@@ -1,14 +1,14 @@
 import express from 'express';
-import { getAllCocktails, createCocktail } from '../controllers/cocktails.js';
+import { getAllCocktails, createCocktail, updateCocktail, likeCocktail, deleteCocktail } from '../controllers/cocktails.js';
 
 const router = express.Router();
 
-//Get ALL COCKTAILS
+
 router.get('/', getAllCocktails);
 router.post('/', createCocktail);
-// router.get('/:id', getOneCocktail);
-// router.patch('/:id', auth, updateCocktail);
-// router.delete('/:id', auth, deleteCocktail);
+router.patch('/:id', updateCocktail);
+router.delete('/:id', deleteCocktail);
+router.patch('/:id/likecocktail', likeCocktail);
 
 
 
