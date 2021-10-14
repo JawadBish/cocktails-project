@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import cocktailsImg from './images/cocktails.png'
+import { useDispatch } from 'react-redux';
 
+
+import {getCocktails} from './actions/cocktails'
+import cocktailsImg from './images/cocktails.png'
 import Cocktails from './components/Cocktails/Cocktails'
 import Form from './components/Form/Form'
 
@@ -9,11 +12,16 @@ import useStyles from './styles'
 
 const App = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(()=> {
+    dispatch(getCocktails());
+  },[dispatch])
 
   return (
     <Container maxwidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2:" align="center">Cocktails</Typography>
+        <Typography className={classes.heading} variant="h2" align="center">Cocktails</Typography>
          <img className={classes.image} src={cocktailsImg} alt="cocktails" height="60" />
       </AppBar>
       <Grow in>

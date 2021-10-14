@@ -31,9 +31,14 @@ Cocktails Menu Branches :
 
 <p> App design and add styles. before working on Form and  App functionality </p>
 <br>
+
+<ul> <b>Redux </b> </ul>
+
+<p>Installation of Redux 
+<li> install Redux : npm install axios moment redux redux-thunk react-redux <br>  </li>
+</p>
+<br>
+
+
 <ul> <b>Frontend</b> </ul>
 <p> create form for cocktail create, edit button to update and delete button   </p>
-
-<br>
-<ul> <b>UI Design</b> </ul>
-<p> UI design before creating form and app functionality   </p>
