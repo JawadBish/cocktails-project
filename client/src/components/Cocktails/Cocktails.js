@@ -1,9 +1,9 @@
 import React from 'react'
 import Cocktail from './Cocktail/Cocktail'
-import useStyles from './styles'
+//import useStyles from './styles'
 function Cocktails() {
 
-    const classes = useStyles();
+   // const classes = useStyles();
 
     return (
         <div>

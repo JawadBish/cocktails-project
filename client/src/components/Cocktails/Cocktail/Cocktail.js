@@ -1,7 +1,7 @@
 import React from 'react'
-import useStyles from './styles'
+//import useStyles from './styles'
 function Cocktail() {
-    const classes = useStyles();
+    //const classes = useStyles();
 
     return (
         <div>
