@@ -7,10 +7,11 @@ const cocktailSchema = mongoose.Schema({
     recipe: String,
     ingredients: [String],
     creator: String,
+    selectedFile: String,
     tags: [String],
-    likes: {
-        type: [String],
-        default: [],
+    likeCount: {
+        type: Number,
+        default: 0,
     },
     createdAt: {
         type: Date,
