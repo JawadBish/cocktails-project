@@ -1,15 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 import { amber } from '@material-ui/core/colors';
-import woodBack from '../../images/header-wood.jpg';
 
 export default makeStyles((theme) => ({
     appBar: {
 
-        // background: `url(${woodBack})`,
-        // backgroundPosition: 'center',
-        // backgroundSize: 'cover',
-        // backgroundRepeat: 'no-repeat',
         background: 'white',
         opacity: 0.9,
         borderRadius: 15,
