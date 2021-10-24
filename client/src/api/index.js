@@ -2,11 +2,21 @@ import axios from 'axios';
 
 
 //not related to redux
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-const url = 'http://localhost:5000/cocktails';
+API.interceptors.request.use((req) => {
+    if (localStorage.getItem('profile')) {
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
+    }
+    return req;
+});
 
-export const fetchAllCocktails = () => axios.get(url);
-export const createCocktail = (newCocktail) => axios.post(url, newCocktail);
-export const likeCocktail = (id) => axios.patch(`${url}/${id}/likecocktail`);
-export const updateCocktail = (id, updatedCocktail) => axios.patch(`${url}/${id}`, updatedCocktail);
-export const deleteCocktail = (id) => axios.delete(`${url}/${id}`);
+
+export const fetchAllCocktails = () => API.get('/cocktails');
+export const createCocktail = (newCocktail) => API.post('/cocktails', newCocktail);
+export const likeCocktail = (id) => API.patch(`/cocktails/${id}/likecocktail`);
+export const updateCocktail = (id, updatedCocktail) => API.patch(`/cocktails/${id}`, updatedCocktail);
+export const deleteCocktail = (id) => API.delete(`/cocktails/${id}`);
+
+export const signIn = (formData) => API.post('users/signin', formData);
+export const signUp = (formData) => API.post('users/signup', formData);
