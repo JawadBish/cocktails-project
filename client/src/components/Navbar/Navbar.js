@@ -49,10 +49,10 @@ const Navbar = () => {
                     <div className={classes.profile}>
                         <Avatar className={classes.redbordo} alt={user.result.name} src={user.result.image}> {user.result.name.charAt(0)}</Avatar>
                         <Typography className={classes.userName} variant="h6"> {user.result.name}</Typography>
-                        <Button variant="contained" className={classes.logout} style={{ textTransform: 'none', backgroundColor: '#990000', color: '#FFFFFF' }} onClick={logout}> Logout </Button>
+                        <Button variant="contained" className={classes.logout} style={{ textTransform: 'none', backgroundColor: '#FFFFFF', color: '#ffc107', fontSize: "large", opacity: 1, fontWeight: "bolder" }} onClick={logout}> Logout </Button>
                     </div>
                 ) : (
-                    <Button component={Link} to="/auth" variant="contained" style={{ textTransform: 'none', backgroundColor: '#990000', color: '#FFFFFF' }}> Signin </Button>
+                    <Button component={Link} to="/auth" variant="contained" style={{ textTransform: 'none', backgroundColor: '#ffc107', color: '#FFFFFF', fontSize: "large", opacity: 1, fontWeight: "bolder" }}> Signin </Button>
                 )}
             </Toolbar>
 
