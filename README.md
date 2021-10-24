@@ -51,3 +51,6 @@ Cocktails Menu Branches :
 <ul> <b>Pagination And Search bar</b> </ul>
 <p> Pagination and search bar. </p>
 <li> Client :  npm install @material-ui/lab material-ui-chip-input<br>  </li>
+
+<ul> <b>Desgin </b> </ul>
+<p> Design application and small fixes and preparation for deployment. </p>
