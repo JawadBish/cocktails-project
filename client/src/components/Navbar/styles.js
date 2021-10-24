@@ -4,7 +4,6 @@ import { amber } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
     appBar: {
-
         background: 'white',
         opacity: 0.9,
         borderRadius: 15,
@@ -24,6 +23,7 @@ export default makeStyles((theme) => ({
         textDecoration: 'none',
         fontSize: '3em',
         fontWeight: 900,
+        textShadow: '1px 5px 3px rgba(15, 14, 14, 0.733)',
         opacity: 1,
     },
     image: {
@@ -51,8 +51,15 @@ export default makeStyles((theme) => ({
     },
     logout: {
         marginLeft: '20px',
+        boxShadow: '0px 5px 5px rgba(15, 14, 14, 0.733)',
     },
     userName: {
+
+        color: amber[500],
+        background: 'white',
+        fontWeight: "bolder",
+        fontSize: '2rem',
+        textShadow: '0px 5px 3px rgba(15, 14, 14, 0.733)',
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
@@ -61,8 +68,14 @@ export default makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
-    redbordo: {
-        color: theme.palette.getContrastText(red[900]),
-        backgroundColor: amber[500],
+    login: {
+        marginLeft: '20px',
+        boxShadow: '0px 5px 5px rgba(15, 14, 14, 0.733)',
     },
+    golden: {
+        color: theme.palette.getContrastText(amber[500]),
+        backgroundColor: amber[500],
+        color: 'white',
+        fontWeight: "bolder",
+    }
 }));
