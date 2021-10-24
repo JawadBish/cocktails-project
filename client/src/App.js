@@ -16,6 +16,8 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={() => <Redirect to="/cocktails" />} />
           <Route path="/cocktails" exact component={Home} />
+          <Route path="/cocktails/search" exact component={Home} />
+          {/* <Route path="/cocktails/:id" component={FactDetails} /> */}
           <Route path="/auth" exact component={Auth} />
         </Switch>
 

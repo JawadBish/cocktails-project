@@ -11,12 +11,15 @@ API.interceptors.request.use((req) => {
     return req;
 });
 
-
-export const fetchAllCocktails = () => API.get('/cocktails');
+export const fetchCocktail = (id) => API.get(`/cocktails/${id}`);
+export const fetchAllCocktails = (page) => API.get(`/cocktails?page=${page}`);
+export const getCocktailsBySearch = (searchQuery) => API.get(`cocktails/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
 export const createCocktail = (newCocktail) => API.post('/cocktails', newCocktail);
-export const likeCocktail = (id) => API.patch(`/cocktails/${id}/likecocktail`);
 export const updateCocktail = (id, updatedCocktail) => API.patch(`/cocktails/${id}`, updatedCocktail);
 export const deleteCocktail = (id) => API.delete(`/cocktails/${id}`);
+export const likeCocktail = (id) => API.patch(`/cocktails/${id}/likecocktail`);
 
 export const signIn = (formData) => API.post('users/signin', formData);
 export const signUp = (formData) => API.post('users/signup', formData);
+
+//&ingredients=${searchQuery.ingredients}

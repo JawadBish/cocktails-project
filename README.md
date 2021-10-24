@@ -47,3 +47,7 @@ Cocktails Menu Branches :
 <p> Login\Logout Google - and Register form. </p>
 <li> Client :  npm install jwt-decode react-google-login react-router-dom <br>  </li>
 <li> Server :  npm install bcryptjs jsonwebtoken <br>  </li>
+
+<ul> <b>Pagination And Search bar</b> </ul>
+<p> Pagination and search bar. </p>
+<li> Client :  npm install @material-ui/lab material-ui-chip-input<br>  </li>

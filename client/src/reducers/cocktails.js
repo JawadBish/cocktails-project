@@ -1,19 +1,48 @@
-import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from '../constants/actionTypes'
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE, FETCH_BY_SEARCH, START_LOADING, END_LOADING, FETCH_COCKTAIL } from '../constants/actionTypes'
 
-const cocktailsReducer = (cocktails = [], action) => {
+const cocktailsReducer = (state = { isLoading: true, cocktails: [] }, action) => {
     switch (action.type) {
+        case START_LOADING:
+            return { ...state, isLoading: true };
+        case END_LOADING:
+            return { ...state, isLoading: false };
         case FETCH_ALL:
-            return action.payload;
+            return {
+                ...state,
+                cocktails: action.payload.data,
+                currentPage: action.payload.currentPage,
+                numberOfPages: action.payload.numberOfPages,
+            };
+        case FETCH_BY_SEARCH:
+            return {
+                ...state,
+                cocktails: action.payload,
+
+            };
+        case FETCH_COCKTAIL:
+            return {
+                ...state,
+                cocktail: action.payload.cocktail
+            };
         case CREATE:
-            return [...cocktails, action.payload];
-        case LIKE:
-            return cocktails.map((cocktail) => (cocktails._id === action.payload._id ? action.payload : cocktail));
+            return {
+                ...state,
+                cocktails: [...state.cocktails, action.payload]
+            };
         case UPDATE:
-            return cocktails.map((cocktail) => (cocktail._id === action.payload._id ? action.payload : cocktail));
+        case LIKE:
+            return {
+                ...state,
+                cocktails: state.cocktails.map((cocktails) => cocktails._id === action.payload._id ? action.payload : cocktails)
+
+            };
         case DELETE:
-            return cocktails.filter((cocktail) => cocktail._id !== action.payload);
+            return {
+                ...state,
+                cocktails: state.cocktails.filter((cocktail) => cocktail._id !== action.payload)
+            };
         default:
-            return cocktails;
+            return state;
     };
 }
 
