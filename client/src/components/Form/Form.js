@@ -16,7 +16,7 @@ const Form = ({ currentId, setCurrentId }) => {
         selectedFile: '',
         tags: ''
     })
-
+    const user = JSON.parse(localStorage.getItem('profile'));
     const classes = useStyles();
     const dispatch = useDispatch();
     const cocktail = useSelector((state) => (currentId ? state.cocktails.find((cocktail) => cocktail._id === currentId) : null));
@@ -32,8 +32,6 @@ const Form = ({ currentId, setCurrentId }) => {
     }
 
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -46,7 +44,15 @@ const Form = ({ currentId, setCurrentId }) => {
         clear();
     }
 
-
+    if (!user?.result?.name) {
+        return (
+            <Paper className={classes.paper}>
+                <Typography variant="h6" align="center">
+                    Please Sign In
+                </Typography>
+            </Paper>
+        )
+    }
 
 
     return (
