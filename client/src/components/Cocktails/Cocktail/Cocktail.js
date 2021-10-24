@@ -14,35 +14,23 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
-    const [likes, setLikes] = useState(cocktail?.likes);
     const userId = user?.result.googleId || user?.result?._id;
-    const hasLikedCocktail = cocktail.likes.find((like) => like === userId);
 
     console.log("USER ID : ", userId);
     console.log("USER  : ", user);
-    const handleLike = async () => {
-        dispatch(likeCocktail(cocktail._id));
 
-        if (hasLikedCocktail) {
-            setLikes(cocktail.likes.filter((id) => id !== userId));
-        } else {
-            setLikes([...cocktail.likes, userId]);
-        }
-    };
 
     const Likes = () => {
-        if (likes.length > 0) {
-            return likes.find((like) => like === userId)
+        if (cocktail.likes.length > 0) {
+            return cocktail.likes.find((like) => like === userId)
                 ? (
-                    <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}`}</>
+                    <><ThumbUpAltIcon fontSize="small" />&nbsp;{cocktail.likes.length > 2 ? `You and ${cocktail.likes.length - 1} others` : `${cocktail.likes.length} like${cocktail.likes.length > 1 ? 's' : ''}`}</>
                 ) : (
-                    <><ThumbUpAltOutlined fontSize="small" />&nbsp;{likes.length} {likes.length === 1 ? 'Like' : 'Likes'}</>
+                    <><ThumbUpAltOutlined fontSize="small" />&nbsp;{cocktail.likes.length} {cocktail.likes.length === 1 ? 'Like' : 'Likes'}</>
                 );
         }
-
         return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
     };
-
 
     return (
         <Card className={classes.card}>
@@ -65,7 +53,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
 
-                <Button size="small" color="primary" style={{ textTransform: 'none' }} disabled={!user?.result} onClick={handleLike}>
+                <Button size="small" color="primary" style={{ textTransform: 'none' }} disabled={!user?.result} onClick={() => dispatch(likeCocktail(cocktail._id))}>
                     <Likes />
                 </Button>
 

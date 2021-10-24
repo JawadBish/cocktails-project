@@ -34,8 +34,9 @@ export const updateCocktail = (id, cocktail) => async (dispatch) => {
 
 
 export const likeCocktail = (id) => async (dispatch) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
     try {
-        const { data } = await api.likeCocktail(id);
+        const { data } = await api.likeCocktail(id, user?.token);
         dispatch({ type: LIKE, payload: data });
     } catch (error) {
         console.log(error.message);

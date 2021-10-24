@@ -2,13 +2,13 @@ import express from 'express';
 import { getAllCocktails, createCocktail, updateCocktail, likeCocktail, deleteCocktail } from '../controllers/cocktails.js';
 
 const router = express.Router();
-
+import auth from "../middleware/auth.js";
 
 router.get('/', getAllCocktails);
-router.post('/', createCocktail);
-router.patch('/:id', updateCocktail);
-router.delete('/:id', deleteCocktail);
-router.patch('/:id/likecocktail', likeCocktail);
+router.post('/', auth, createCocktail);
+router.patch('/:id', auth, updateCocktail);
+router.delete('/:id', auth, deleteCocktail);
+router.patch('/:id/likecocktail', auth, likeCocktail);
 
 
 

@@ -51,11 +51,23 @@ export const deleteCocktail = async (req, res) => {
 export const likeCocktail = async (req, res) => {
     const { id } = req.params;
 
+    if (!req.userId) {
+        return res.json({ message: "Unauthenticated" });
+    }
+
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Cocktail with id: ${id}`);
 
     const cocktail = await InstanceCocktail.findById(id);
 
-    const updateCocktail = await InstanceCocktail.findByIdAndUpdate(id, { likeCount: cocktail.likeCount + 1 }, { new: true });
+    const index = cocktail.likes.findIndex((id) => id === String(req.userId));
+
+    if (index === -1) {
+        cocktail.likes.push(req.userId);
+    } else {
+        cocktail.likes = cocktail.likes.filter((id) => id !== String(req.userId));
+    }
+
+    const updateCocktail = await InstanceCocktail.findByIdAndUpdate(id, cocktail, { new: true });
 
     res.json(updateCocktail);
 }
