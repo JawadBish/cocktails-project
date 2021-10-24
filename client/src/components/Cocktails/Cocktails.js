@@ -7,7 +7,7 @@ import useStyles from './styles'
 const Cocktails = ({ setCurrentId }) => {
     const cocktails = useSelector((state) => state.cocktails);
     const classes = useStyles();
-    console.log(cocktails);
+    console.log("COCKTAILS", cocktails);
 
     // if (isLoading) {
     //     return (<>
