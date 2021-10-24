@@ -37,7 +37,9 @@ const Navbar = () => {
 
 
     return (
+
         <AppBar className={classes.appBar} position="static" color="inherit">
+
             <div className={classes.brandContainer}>
                 <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Cocktails App</Typography>
 
@@ -53,7 +55,9 @@ const Navbar = () => {
                     <Button component={Link} to="/auth" variant="contained" style={{ textTransform: 'none', backgroundColor: '#990000', color: '#FFFFFF' }}> Signin </Button>
                 )}
             </Toolbar>
+
         </AppBar>
+
     )
 }
 

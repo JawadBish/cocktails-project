@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home';
 import Auth from './components/Auth/Auth';
 import CocktailDetails from './components/CocktailDetails/CocktailDetails';
-
+import './index.css';
 
 const App = () => {
 

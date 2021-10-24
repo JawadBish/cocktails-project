@@ -1,0 +1,6 @@
+body {
+  background-color: #ffffff;
+  background-image: url(/src/images/background-bar1-color.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
