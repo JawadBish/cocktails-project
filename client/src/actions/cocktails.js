@@ -20,7 +20,7 @@ export const getCocktail = (id) => async (dispatch) => {
 
         const { data } = await api.fetchCocktail(id);
 
-        dispatch({ type: FETCH_COCKTAIL, payload: { fact: data } });
+        dispatch({ type: FETCH_COCKTAIL, payload: { cocktail: data } });
         dispatch({ type: END_LOADING });
     } catch (error) {
         console.log(error);

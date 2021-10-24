@@ -39,7 +39,7 @@ const Home = () => {
 
     const handleKeyPress = (e) => {
         if (e.keyCode === 13) {
-            //search for fact
+            //search for cocktail
         }
     }
 
@@ -60,7 +60,7 @@ const Home = () => {
 
                             <TextField name="search"
                                 variant="outlined"
-                                label="Search Facts"
+                                label="Search Cocktail"
                                 autoComplete='off'
                                 onKeyPress={handleKeyPress}
                                 value={search}

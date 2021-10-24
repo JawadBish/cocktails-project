@@ -20,7 +20,7 @@ const Form = ({ currentId, setCurrentId }) => {
     const classes = useStyles();
     const history = useHistory();
     const dispatch = useDispatch();
-    const cocktail = useSelector((state) => (currentId ? state.cocktails.find((cocktail) => cocktail._id === currentId) : null));
+    const cocktail = useSelector((state) => (currentId ? state.cocktails.cocktails.find((cocktail) => cocktail._id === currentId) : null));
 
     useEffect(() => {
         if (cocktail) setCocktailData(cocktail);
