@@ -5,7 +5,8 @@ This Project will contain recipes and ingredients for speciall cocktails.
 
  <hr>
 
-Cocktails Menu Branches : 
+Cocktails Menu Branches :
+
 <ul> <b> Preparation </b></ul>
 <li> clear unnecessary react files </li>
 <li> install required tools : <br> (Client) : npm install axios moment redux redux-thunk react-redux react-file-base64 <br> (Server) : npm install body-parser cors express mongoose nodemon  </li>
@@ -39,6 +40,10 @@ Cocktails Menu Branches :
 </p>
 <br>
 
-
 <ul> <b>Frontend</b> </ul>
 <p> create form for cocktail create, edit button to update and delete button   </p>
+
+<ul> <b>Authentications</b> </ul>
+<p> Login\Logout Google - and Register form. </p>
+<li> Client :  npm install jwt-decode react-google-login react-router-dom <br>  </li>
+<li> Server :  npm install bcryptjs jsonwebtoken <br>  </li>
