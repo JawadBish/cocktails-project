@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import useStyles from './styles';
 import Input from './Input';
-import LockoutlinedIcon from '@material-ui/icons/LockOutlined'
+import LockoutlinedIcon from '@material-ui/icons/LockOutlined';
+import VpnKeyOutlinedIcon from '@material-ui/icons/VpnKeyOutlined';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import Icon from './Icon';
@@ -64,10 +65,8 @@ const Auth = () => {
         <div>
             <Container component="main" maxWidth="xs">
                 <Paper className={styleclass.paper} elevation={3}>
-                    <Avatar className={styleclass.avatar}>
-                        <LockoutlinedIcon />
-                    </Avatar>
-                    <Typography variant="h5">{isSignup ? 'Sign Up' : 'Sign In'} </Typography>
+                    <Typography variant="h5" style={{ textTransform: 'none', color: '#ffc107', fontWeight: "bolder" }} >{isSignup ? 'Sign Up' : 'Sign In'} </Typography>
+                    <VpnKeyOutlinedIcon style={{ background: '#FFFFFF', color: '#ffc107' }} />
                     <form className={styleclass.form} onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                             {
@@ -83,14 +82,14 @@ const Auth = () => {
                             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
                             {isSignup && <Input name="confirmPassword" label="Repreat Password" handleChange={handleChange} type="password" />}
                         </Grid>
-                        <Button type="submit" fullWidth variant="contained" style={{ textTransform: 'none', backgroundColor: '#990000', color: '#FFFFFF' }} className={styleclass.submit}>
+                        <Button type="submit" fullWidth variant="contained" style={{ textTransform: 'none', backgroundColor: '#ffc107', color: '#FFFFFF', fontWeight: "bold" }} className={styleclass.submit}>
                             {isSignup ? 'Sign Up' : 'Sign In'}
                         </Button>
                         <GoogleLogin
                             clientId="429236482809-rt0ur63bkeq084m2pn5tk3v4q0q6ro48.apps.googleusercontent.com"
                             render={(renderProps) => (
                                 <Button className={styleclass.googleButton}
-                                    style={{ textTransform: 'none', backgroundColor: '#990000', color: '#FFFFFF' }}
+                                    style={{ textTransform: 'none', backgroundColor: '#ffc107', color: '#FFFFFF', fontWeight: "bold" }}
                                     fullWidth
                                     onClick={renderProps.onClick}
                                     startIcon={<Icon />}
@@ -104,7 +103,7 @@ const Auth = () => {
                         />
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Button onClick={switchMode} style={{ textTransform: 'none', backgroundColor: '#FFFFFF', color: '#990000' }}>
+                                <Button onClick={switchMode} className={styleclass.withshadow} style={{ textTransform: 'none', color: '#ffc107', fontWeight: "bold" }}>
                                     {isSignup ? 'Already have an account? Login ' : "Don't have an account? Signup Now!"}
                                 </Button>
                             </Grid>

@@ -13,9 +13,13 @@ export default makeStyles((theme) => ({
             margin: theme.spacing(1),
         },
     },
+    withshadow: {
+        boxShadow: '0px 2px 2px #ffc107',
+    },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: 'white',
+        fontSize: 'large'
     },
     form: {
         width: '100%', // Fix IE 11 issue.
