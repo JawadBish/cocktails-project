@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import useStyles from './styles'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core';
+import { Card, CardActions, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import moment from 'moment';
+
 import { useDispatch } from 'react-redux';
 import { likeCocktail, deleteCocktail } from '../../../actions/cocktails';
 import { useHistory } from 'react-router-dom';
@@ -19,7 +18,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
     const styleclass = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
     const userId = user?.result.googleId || user?.result?._id;
-    const [likes, setLikes] = useState(cocktail?.likes);
+    const [setLikes] = useState(cocktail?.likes);
     const hasLikedCocktail = cocktail.likes.find((like) => like === userId);
     const history = useHistory();
 
@@ -77,7 +76,21 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
                     <Typography align="center" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }}>Cocktail Details</Typography>
                 </div>
             </ButtonBase>
+            <CardActions className={styleclass.cardActions}>
 
+                <Button size="small" color="primary" style={{ textTransform: 'none' }} disabled={!user?.result} onClick={handleLike}>
+                    <Likes />
+                </Button>
+
+                {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
+
+                    <Button size="small" style={{ textTransform: 'none', color: '#fc0313' }} onClick={() => dispatch(deleteCocktail(cocktail._id))}>
+                        <DeleteIcon fontSize="small" />
+                        Delete
+                    </Button>
+
+                )}
+            </CardActions>
 
         </Card >
     );

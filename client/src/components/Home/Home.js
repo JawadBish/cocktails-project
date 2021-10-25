@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Grid, Grow, Paper, AppBar, TextField, Button, Item } from '@material-ui/core';
+import { Container, Grid, Grow, Paper, TextField, Button } from '@material-ui/core';
 import Cocktails from '../../components/Cocktails/Cocktails'
 import Form from '../../components/Form/Form'
 import { useDispatch } from 'react-redux';
 import Pagination from '../Pagination';
 import { useHistory, useLocation } from 'react-router-dom';
-import ChipInput from 'material-ui-chip-input';
 import useStyles from './styles';
 import { getCocktailsBySearch } from '../../actions/cocktails';
 
@@ -23,7 +22,7 @@ const Home = () => {
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
     const [search, setSearch] = useState('');
-    const [tags, setTags] = useState([]);
+    const [tags] = useState([]);
     const styleclass = useStyles();
 
 
@@ -44,9 +43,6 @@ const Home = () => {
     }
 
 
-    const handleAddChip = (tag) => setTags([...tags, tag]);
-
-    const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
     return (
         <Grow in>

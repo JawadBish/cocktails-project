@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import useStyles from './styles';
 import Input from './Input';
-import LockoutlinedIcon from '@material-ui/icons/LockOutlined';
+
 import VpnKeyOutlinedIcon from '@material-ui/icons/VpnKeyOutlined';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
