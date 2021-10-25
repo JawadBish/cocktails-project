@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import LocalBarIcon from '@material-ui/icons/LocalBar';
 import FileBase from 'react-file-base64'
 import useStyles from './styles'
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,7 +50,7 @@ const Form = ({ currentId, setCurrentId }) => {
         return (
             <Paper className={classes.paper}>
                 <Typography style={{ backgroundColor: '#ffc107', color: '#FFFFFF', fontWeight: 'bolder' }} variant="h6" align="center">
-                    Please Sign In
+                    Sign-in to share your own Cocktail <LocalBarIcon />
                 </Typography>
             </Paper>
         )

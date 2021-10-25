@@ -81,7 +81,6 @@ const Home = () => {
                         {(!searchQuery && !tags.length) && (
                             <Paper elevation={8} className={styleclass.pagination}>
                                 <Pagination page={page} />
-
                             </Paper>
                         )}
                         <br />
