@@ -18,7 +18,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
     const styleclass = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
     const userId = user?.result.googleId || user?.result?._id;
-    const [setLikes] = useState(cocktail?.likes);
+    const [likes, setLikes] = useState(cocktail?.likes);
     const hasLikedCocktail = cocktail.likes.find((like) => like === userId);
     const history = useHistory();
 
