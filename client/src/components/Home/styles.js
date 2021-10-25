@@ -114,4 +114,11 @@ export default makeStyles((theme) => ({
     actionDiv: {
         textAlign: 'center',
     },
+    gridContainer: {
+        [theme.breakpoints.down('xs')]: {
+            flexDirection: 'column-reverse',
+            marginTop: '1rem',
+        },
+    },
+
 }));

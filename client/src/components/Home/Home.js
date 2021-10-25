@@ -74,27 +74,27 @@ const Home = () => {
 
 
 
-                    <Grid item xs={12} sm={8} md={12}>
+                    <Grid item xs={12} sm={6} md={9}>
                         <Cocktails setCurrentId={setCurrentId} />
+
                         <br></br>
                         {(!searchQuery && !tags.length) && (
                             <Paper elevation={8} className={styleclass.pagination}>
                                 <Pagination page={page} />
-
-
 
                             </Paper>
                         )}
                         <br />
 
                     </Grid>
+
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Form currentId={currentId} setCurrentId={setCurrentId} />
+                    </Grid>
+
                 </Grid>
 
 
-
-                <Grid item xs={12} sm={8} md={3}>
-                    <Form currentId={currentId} setCurrentId={setCurrentId} />
-                </Grid>
 
 
             </Container>
