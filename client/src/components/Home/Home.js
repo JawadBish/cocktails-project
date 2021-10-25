@@ -52,10 +52,10 @@ const Home = () => {
         <Grow in>
             <Container maxWidth="xl">
                 <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={styleclass.gridContainer}>
-                    <Grid item xs={12} sm={6} md={9}>
+                    <Grid item xs={12} sm={8} md={9}>
                         <Cocktails setCurrentId={setCurrentId} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} sm={8} md={3}>
                         <AppBar className={styleclass.appBarSearch} position="static" color="inherit">
 
                             <TextField name="search"
@@ -83,7 +83,7 @@ const Home = () => {
                         </AppBar>
                         <Form currentId={currentId} setCurrentId={setCurrentId} />
                         {(!searchQuery && !tags.length) && (
-                            <Paper elevation={6} className={styleclass.pagination}>
+                            <Paper elevation={8} className={styleclass.pagination}>
                                 <Pagination page={page} />
                             </Paper>
                         )}

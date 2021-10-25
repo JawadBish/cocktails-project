@@ -4,3 +4,8 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.mainFont {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-size: "large";
+}

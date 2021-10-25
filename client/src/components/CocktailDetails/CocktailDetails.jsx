@@ -30,7 +30,7 @@ const CocktailDetails = () => {
 
   if (isLoading) {
     return (
-      <Paper elevation={6} className={classes.loadingPaper}>
+      <Paper elevation={8} className={classes.loadingPaper}>
         <CircularProgress size="7em" />
       </Paper>
     );
@@ -40,7 +40,7 @@ const CocktailDetails = () => {
   const recommendedCocktails = cocktails.filter(({ _id }) => _id !== cocktail._id);
 console.log("RECO" , recommendedCocktails)
   return (
-    <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+    <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={8}>
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{cocktail.name}</Typography>

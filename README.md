@@ -54,3 +54,4 @@ Cocktails Menu Branches :
 
 <ul> <b>Desgin </b> </ul>
 <p> Design application and small fixes and preparation for deployment. </p>
+<li> Client : npm install --save react-google-font-loader<br>  </li>

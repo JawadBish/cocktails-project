@@ -9,7 +9,9 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { likeCocktail, deleteCocktail } from '../../../actions/cocktails';
 import { useHistory } from 'react-router-dom';
-
+import '../../../index.css';
+import GoogleFontLoader from 'react-google-font-loader';
+import defaultImg from '../../../images/header-wood.jpg';
 
 const Cocktail = ({ cocktail, setCurrentId }) => {
     const dispatch = useDispatch();
@@ -19,6 +21,16 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
     const [likes, setLikes] = useState(cocktail?.likes);
     const hasLikedCocktail = cocktail.likes.find((like) => like === userId);
     const history = useHistory();
+
+    <GoogleFontLoader
+        fonts={[
+            {
+                font: 'Zen Kurenaido',
+                weights: [400, 'Regular 400'],
+            },
+        ]}
+        subsets={['cyrillic-ext', 'greek']}
+    />
 
     const handleLike = async () => {
         dispatch(likeCocktail(cocktail._id));
@@ -49,43 +61,24 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
 
     return (
         <Card className={styleclass.card}>
-            <CardMedia className={styleclass.media} image={cocktail.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={cocktail.title} />
+            <CardMedia className={styleclass.media} image={cocktail.selectedFile || defaultImg} name={cocktail.name} />
             <div className={styleclass.overlay}>
-                <Typography variant="h6">{cocktail.name}</Typography>
-                <Typography variant="body2">{moment(cocktail.createdAt).fromNow()} || {cocktail.creator} </Typography>
-            </div>
-            <div className={styleclass.overlay2}>
-                {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
-                    <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="medium" /></Button>
-                )}
-            </div>
+                <Typography align="center" variant="h2" style={{ fontFamily: 'Zen Kurenaido', textAlign: 'center', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }} >{cocktail.name}</Typography>
 
+            </div>
             <ButtonBase className={styleclass.cardAction} onClick={openCocktail} >
-
-                <div className={styleclass.recipe}>
-                    <Typography variant="body2" color="textSecondary" component="h2">{cocktail.tags.map((tag) => `#${tag} `)}</Typography>
+                <div className={styleclass.overlay2}>
+                    {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
+                        <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="medium" /></Button>
+                    )}
                 </div>
-                <Typography className={styleclass.tags} gutterBottom variant="h5" component="h2">{cocktail.ingredients}</Typography>
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{cocktail.recipe}</Typography>
-                </CardContent>
+
+
+                <div className="mainFont">
+                    <Typography align="center" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }}>Cocktail Details</Typography>
+                </div>
             </ButtonBase>
-            <CardActions className={styleclass.cardActions}>
-
-                <Button size="small" color="primary" style={{ textTransform: 'none' }} disabled={!user?.result} onClick={handleLike}>
-                    <Likes />
-                </Button>
-
-                {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
-
-                    <Button size="small" style={{ textTransform: 'none', color: '#fc0313' }} onClick={() => dispatch(deleteCocktail(cocktail._id))}>
-                        <DeleteIcon fontSize="small" />
-                        Delete
-                    </Button>
-
-                )}
-            </CardActions>
-        </Card>
+        </Card >
     );
 };
 
