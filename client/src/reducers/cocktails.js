@@ -33,7 +33,7 @@ const cocktailsReducer = (state = { isLoading: true, cocktails: [] }, action) =>
         case LIKE:
             return {
                 ...state,
-                cocktails: state.cocktails.map((cocktails) => cocktails._id === action.payload._id ? action.payload : cocktails)
+                cocktails: state.cocktails.map((cocktail) => cocktail._id === action.payload._id ? action.payload : cocktail)
 
             };
         case DELETE:

@@ -55,12 +55,12 @@ export const createCocktail = async (req, res) => {
 }
 
 export const updateCocktail = async (req, res) => {
-    const { id: _id } = req.params;
+    const { id } = req.params;
     //const { name, recipe, ingredients, creator, selectedFile, tags } = req.body;
     const cocktailToupdate = req.body;
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No Cocktail with id: ${id}`);
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Cocktail with id: ${id}`);
 
-    const updatedCocktail = await InstanceCocktail.findByIdAndUpdate(_id, { ...cocktailToupdate, id }, { new: true });
+    const updatedCocktail = await InstanceCocktail.findByIdAndUpdate(id, { ...cocktailToupdate, id }, { new: true });
 
     res.json(updatedCocktail);
 }
