@@ -48,7 +48,7 @@ const Form = ({ currentId, setCurrentId }) => {
     if (!user?.result?.name) {
         return (
             <Paper className={classes.paper}>
-                <Typography variant="h6" align="center">
+                <Typography style={{ backgroundColor: '#ffc107', color: '#FFFFFF', fontWeight: 'bolder' }} variant="h6" align="center">
                     Please Sign In
                 </Typography>
             </Paper>
@@ -59,7 +59,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">{currentId ? `Editing "${cocktail.name}"` : 'Creating a Cocktail'}</Typography>
+                <Typography style={{ color: '#ffc107', fontWeight: 'bolder' }} variant="h6">{currentId ? `Editing "${cocktail.name}"` : 'Creating a Cocktail'}</Typography>
 
                 <TextField name="name" variant="outlined" label="Name" fullWidth={true} value={cocktailsData.name} onChange={(e) => setCocktailData({ ...cocktailsData, name: e.target.value })} />
                 {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth={true} value={cocktailsData.creator} onChange={(e) => setCocktailData({ ...cocktailsData, creator: e.target.value })} /> */}
@@ -70,9 +70,9 @@ const Form = ({ currentId, setCurrentId }) => {
                     <FileBase type="file" multiple={false} onDone={({ base64 }) => setCocktailData({ ...cocktailsData, selectedFile: base64 })} />
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth={true}
-                    style={{ backgroundColor: '#990000', color: '#FFFFFF' }}
+                    style={{ backgroundColor: '#ffc107', color: '#FFFFFF' }}
                 >Submit</Button>
-                <Button variant="contained" style={{ backgroundColor: '#FFFFFF', color: '#fc0313' }} size="small" onClick={clear} fullWidth={true}>Clear</Button>
+                <Button variant="contained" style={{ backgroundColor: '#FFFFFF', color: '#ffc107', fontWeight: 'bolder' }} size="small" onClick={clear} fullWidth={true}>Clear</Button>
             </form>
         </Paper>
     );

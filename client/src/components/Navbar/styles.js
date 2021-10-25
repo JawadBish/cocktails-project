@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
 import { amber } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
@@ -73,7 +72,7 @@ export default makeStyles((theme) => ({
         boxShadow: '0px 5px 5px rgba(15, 14, 14, 0.733)',
     },
     golden: {
-        color: theme.palette.getContrastText(amber[500]),
+
         backgroundColor: amber[500],
         color: 'white',
         fontWeight: "bolder",

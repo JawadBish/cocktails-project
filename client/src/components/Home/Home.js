@@ -92,9 +92,9 @@ const Home = () => {
 
 
 
-                {/* <Grid item xs={12} sm={8} md={3}>
+                <Grid item xs={12} sm={8} md={3}>
                     <Form currentId={currentId} setCurrentId={setCurrentId} />
-                </Grid> */}
+                </Grid>
 
 
             </Container>
