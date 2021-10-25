@@ -25,21 +25,17 @@ export default makeStyles({
   overlay: {
     position: 'absolute',
     textAlign: 'center',
-    top: '20px',
+    top: '15px',
     textShadow: '1px 5px 3px rgba(15, 14, 14, 0.733)',
-    // left: '20px',
     color: 'white',
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   overlay2: {
     position: 'absolute',
     top: '20px',
-    // right: '20px',
-    textShadow: '1px 5px 3px rgba(15, 14, 14, 0.733)',
-    color: 'white',
-    textAlign: 'center',
-    alignSelf: 'center',
+    right: '20px',
+    boxShadow: '0px 0px 1px 1px #ffc107',
   },
   grid: {
     display: 'flex',
@@ -49,9 +45,7 @@ export default makeStyles({
     justifyContent: 'space-between',
     margin: '20px',
   },
-  title: {
-    padding: '0 16px',
-  },
+
   cardActions: {
     padding: '0 16px 8px 16px',
     display: 'flex',

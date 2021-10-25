@@ -64,7 +64,12 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         <Card className={styleclass.card}>
             <CardMedia className={styleclass.media} image={cocktail.selectedFile || defaultImg} name={cocktail.name} />
             <div className={styleclass.overlay}>
-                <Typography align="center" variant="h2" style={{ fontFamily: 'Zen Kurenaido', textAlign: 'center', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }} >{cocktail.name}</Typography>
+                <Typography align="center" variant="h3" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bold" }} >{cocktail.name}</Typography>
+            </div>
+            <div className={styleclass.overlay2}>
+                {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
+                    <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="medium" /></Button>
+                )}
 
             </div>
             <ButtonBase onClick={openCocktail} >
