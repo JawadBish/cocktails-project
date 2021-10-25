@@ -26,7 +26,7 @@ const Cocktails = ({ setCurrentId }) => {
         cocktails?.length < 1 ? <CircularProgress /> : (
             <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
                 {cocktails?.map((cocktail) => (
-                    <Grid key={cocktail._id} item xs={12} sm={12} md={4} lg={3}>
+                    <Grid key={cocktail._id} item xs={12} sm={12} md={8} lg={4}>
                         <Cocktail cocktail={cocktail} setCurrentId={setCurrentId} />
                     </Grid>
                 ))

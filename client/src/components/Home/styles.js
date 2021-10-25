@@ -12,6 +12,15 @@ export default makeStyles((theme) => ({
         padding: '10px 50px',
         textAlign: 'center',
     },
+    pagination: {
+        background: '#ffc107',
+        display: 'flex',
+        fontSize: 'large',
+        flexDirection: 'row',
+        textAlign: 'center',
+        justifyContent: 'center',
+        textDecoration: 'none',
+    },
     heading: {
         color: 'rgba(0,183,255, 1)',
         textDecoration: 'none',

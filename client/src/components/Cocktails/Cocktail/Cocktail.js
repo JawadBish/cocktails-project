@@ -5,6 +5,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { likeCocktail, deleteCocktail } from '../../../actions/cocktails';
@@ -66,18 +67,33 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
                 <Typography align="center" variant="h2" style={{ fontFamily: 'Zen Kurenaido', textAlign: 'center', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }} >{cocktail.name}</Typography>
 
             </div>
-            <ButtonBase className={styleclass.cardAction} onClick={openCocktail} >
-                <div className={styleclass.overlay2}>
-                    {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
-                        <Button style={{ color: 'white' }} size="small" onClick={() => setCurrentId(cocktail._id)}><MoreHorizIcon fontSize="medium" /></Button>
-                    )}
-                </div>
-
-
+            <ButtonBase onClick={openCocktail} >
                 <div className="mainFont">
                     <Typography align="center" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }}>Cocktail Details</Typography>
                 </div>
             </ButtonBase>
+            {/* <CardActions className={styleclass.cardActions}>
+
+                <Button size="small" color="primary" style={{ textTransform: 'none' }} disabled={!user?.result} onClick={handleLike}>
+                    <Likes />
+                </Button>
+
+                {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
+
+                    <Button size="small" style={{ textTransform: 'none', color: '#ffc107' }} onClick={() => dispatch(deleteCocktail(cocktail._id))}>
+                        <DeleteIcon fontSize="small" />
+                        Delete
+                    </Button>
+
+
+
+                )}
+                <Button size="small" style={{ textTransform: 'none', color: '#ffc107' }} onClick={() => dispatch(deleteCocktail(cocktail._id))}>
+                    <FavoriteBorderIcon fontSize="small" />
+                    Delete
+                </Button>
+            </CardActions> */}
+
         </Card >
     );
 };
