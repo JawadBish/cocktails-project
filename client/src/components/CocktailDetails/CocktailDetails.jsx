@@ -1,5 +1,5 @@
 import React , {useEffect} from 'react'
-import { Paper, Typography, CircularProgress, Divider} from '@material-ui/core';
+import { Paper, Typography, CircularProgress, Divider, Button} from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import moment from 'moment';
@@ -44,25 +44,23 @@ console.log("RECO" , recommendedCocktails)
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{cocktail.name}</Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{cocktail.tags.map((tag) => `#${tag} `)}</Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{cocktail.ingredients.map((ingredient) => `#${ingredient} `)}</Typography>
-          <Typography gutterBottom variant="body1" component="p">{cocktail.recipe}</Typography>
+          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '7px'  }} />
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2"> Tags : {cocktail.tags.map((tag) => `#${tag} `)}</Typography>
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2"> Ingredients: {cocktail.ingredients.map((ingredient) => `#${ingredient} `)}</Typography>
+          <Typography gutterBottom variant="body1" component="p"> Recipe :{cocktail.recipe}</Typography>
           <Typography variant="h6">Created by: {cocktail.creator}</Typography>
-          <Typography variant="body1">{moment(cocktail.createdAt).fromNow()}</Typography>
+          <Typography variant="body1">Created Date : {moment(cocktail.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
-          <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong>Comments - coming soon!</strong></Typography>
-          <Divider style={{ margin: '20px 0' }} />
+
         </div>
-        {/* <div className={classes.imageSection}>
-          <img className={classes.media} src={aeImage} alt={cocktail.createdAt} />
-        </div> */}
+        <div className={classes.imageSection}>
+          <img className={classes.media} src={cocktail.selectedFile} alt={cocktail.createdAt} />
+        </div>
       </div>
       {recommendedCocktails.length > 0 && (
         <div className={classes.section}>
           <Typography gutterBottom variant="h5">You might also like:</Typography>
-          <Divider />
+          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '3px'  }} />
           <div className={classes.recommendedPosts}>
             {recommendedCocktails.map(({ name, creator, likes, _id,tags }) => (
               <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openCocktail(_id)} key={_id}>
@@ -75,8 +73,9 @@ console.log("RECO" , recommendedCocktails)
           </div>
         </div>
       )}
-
+      <Button onClick={() => history.goBack()}>Back</Button>
     </Paper>
+  
   );
 };
 

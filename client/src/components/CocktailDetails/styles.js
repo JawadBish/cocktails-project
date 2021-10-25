@@ -15,11 +15,13 @@ export default makeStyles((theme) => ({
             flexWrap: 'wrap',
             flexDirection: 'column',
         },
+        alignItems: 'center'
     },
     section: {
         borderRadius: '20px',
         margin: '10px',
         flex: 1,
+        textAlign: 'center'
     },
     imageSection: {
         width: '40%',
@@ -29,6 +31,7 @@ export default makeStyles((theme) => ({
         },
     },
     recommendedPosts: {
+
         display: 'flex',
         [theme.breakpoints.down('sm')]: {
             flexDirection: 'column',
