@@ -17,7 +17,7 @@ const Cocktails = ({ setCurrentId }) => {
     else {
         if (cocktails?.length < 1 || cocktails === 'undefined') {
             return (<>
-                <h1 className={classes.h1} style={{ backgroundColor: '#FFFFFF', color: '#990000' }}>No Cocktails Found</h1>
+                <h1 className={classes.h1} style={{ backgroundColor: '#FFFFFF', color: '#ffc107' }}>No Cocktails Found</h1>
             </>)
         }
     }

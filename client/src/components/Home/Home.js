@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Grid, Grow, Paper, AppBar, TextField, Button } from '@material-ui/core';
+import { Container, Grid, Grow, Paper, AppBar, TextField, Button, Item } from '@material-ui/core';
 import Cocktails from '../../components/Cocktails/Cocktails'
 import Form from '../../components/Form/Form'
 import { useDispatch } from 'react-redux';
@@ -51,28 +51,26 @@ const Home = () => {
     return (
         <Grow in>
             <Container maxWidth="xl">
-                <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={styleclass.gridContainer}>
 
-                    <AppBar className={styleclass.appBarSearch} position="static" color="inherit">
-                        <TextField name="search"
-                            variant="outlined"
-                            label="Search Cocktail"
-                            autoComplete='off'
-                            onKeyPress={handleKeyPress}
-                            value={search}
-                            fullWidth
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-                        <Button onClick={searchCocktail} className={styleclass.searchButton} style={{ backgroundColor: '#990000', color: '#FFFFFF' }} variant="contained" > Search </Button>
-                        <ChipInput
-                            styles={{ margin: '10px 0' }}
-                            value={tags}
-                            onAdd={(tag) => handleAddChip(tag)}
-                            onDelete={(tag) => handleDeleteChip(tag)}
-                            label='Search Tags'
-                            variant="outlined"
-                        />
-                    </AppBar>
+                <Paper elevation={8} className={styleclass.pagination}>
+
+                    <TextField className={styleclass.searchfield}
+                        name="search"
+                        variant="outlined"
+                        label="Search Cocktail"
+                        autoComplete='off'
+                        onKeyPress={handleKeyPress}
+                        value={search}
+                        fullWidth
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <Button onClick={searchCocktail} className={styleclass.searchButton} style={{ textTransform: 'none', backgroundColor: '#ffc107', color: '#FFFFFF', opacity: 1, fontWeight: "bolder" }} variant="contained" > Search </Button>
+
+                </Paper>
+
+
+                <br />
+                <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={styleclass.gridContainer}>
 
 
 
@@ -82,17 +80,23 @@ const Home = () => {
                         {(!searchQuery && !tags.length) && (
                             <Paper elevation={8} className={styleclass.pagination}>
                                 <Pagination page={page} />
+
+
+
                             </Paper>
                         )}
-                    </Grid>
-
-
-                    <Grid item xs={12} sm={8} md={3}>
-
-                        <Form currentId={currentId} setCurrentId={setCurrentId} />
+                        <br />
 
                     </Grid>
                 </Grid>
+
+
+
+                {/* <Grid item xs={12} sm={8} md={3}>
+                    <Form currentId={currentId} setCurrentId={setCurrentId} />
+                </Grid> */}
+
+
             </Container>
         </Grow >
     )
