@@ -1,7 +1,9 @@
 # Cocktails Project
 
 This Project will contain recipes and ingredients for speciall cocktails.
-** IMAGE **
+URL : https://jcocktails-app.netlify.app/cocktails
+
+![image](https://user-images.githubusercontent.com/22063155/138794628-63c6b735-7608-43ab-a4cc-beb03444a5e7.png)
 
  <hr>
 
@@ -46,18 +48,18 @@ Cocktails Menu Branches :
 <ul> <b>Authentications</b> </ul>
 <p> Login\Logout Google - and Register form. </p>
 <li> Client :  npm install jwt-decode react-google-login react-router-dom <br>  </li>
-<li> Server :  npm install bcryptjs jsonwebtoken <br>  </li>
+<li> Server :  npm install bcryptjs jsonwebtoken <br>  </li> <br>
 
 <ul> <b>Pagination And Search bar</b> </ul>
 <p> Pagination and search bar. </p>
-<li> Client :  npm install @material-ui/lab material-ui-chip-input<br>  </li>
+<li> Client :  npm install @material-ui/lab material-ui-chip-input<br>  </li> <br>
 
 <ul> <b>Desgin </b> </ul>
 <p> Design application and small fixes and preparation for deployment. </p>
-<li> Client : npm install --save react-google-font-loader<br>  </li>
+<li> Client : npm install --save react-google-font-loader<br>  </li> <br>
 
 <ul> <b>Deployment </b> </ul>
-<p> Deploy App - BE Heroku  <br>
+<li> Deploy App - BE Heroku  </li>
 - Check Heroku :  heroku -v <br>
 - Server Side  Command Line : <br>
 heroku login <br>
@@ -68,7 +70,7 @@ git add . <br>
 git commit -am "make it better" <br>
 git push heroku master <br>
 <hr>
-<p> Deploy App - FE Netlify  <br>
+<li> Deploy App - FE Netlify  </li>
 <p> Change client\src\api\index.js -> url </p> <br>
 npm run build <br>
 drag and drop build folder to netlify.
