@@ -1,10 +1,12 @@
 # Cocktails Project
 
-This Project will contain recipes and ingredients for speciall cocktails.
+This Project will contain recipes and ingredients for speciall cocktails. <br>
 URL : https://jcocktails-app.netlify.app/cocktails
 
 ![image](https://user-images.githubusercontent.com/22063155/138794628-63c6b735-7608-43ab-a4cc-beb03444a5e7.png)
 
+<b> Setup: </b>
+run npm i && npm start for both client and server side to start the app
  <hr>
 
 Cocktails Menu Branches :
