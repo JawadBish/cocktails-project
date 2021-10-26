@@ -5,7 +5,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import moment from 'moment';
 import useStyles from './styles';
 import { getCocktail, getCocktailsBySearch } from '../../actions/cocktails';
-// import aeImage from '../../images/ae.jpg';
+import altImage from '../../images/altimage.jpg';
 const CocktailDetails = () => {
     
   const { cocktail, cocktails, isLoading } = useSelector((state) => state.cocktails);
@@ -54,7 +54,7 @@ console.log("RECO" , recommendedCocktails)
 
         </div>
         <div className={classes.imageSection}>
-          <img className={classes.media} src={cocktail.selectedFile} alt={cocktail.createdAt} />
+          <img className={classes.media} src={cocktail.selectedFile ? cocktail.selectedFile : altImage } alt={cocktail.name} />
         </div>
       </div>
       {recommendedCocktails.length > 0 && (

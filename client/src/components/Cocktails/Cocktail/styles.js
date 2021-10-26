@@ -24,11 +24,12 @@ export default makeStyles({
   },
   overlay: {
     position: 'absolute',
-    textAlign: 'center',
+
     top: '15px',
     textShadow: '1px 5px 3px rgba(15, 14, 14, 0.733)',
     color: 'white',
-    alignSelf: 'center',
+    top: '60px',
+    left: '30px',
     justifyContent: 'center',
   },
   overlay2: {
@@ -51,4 +52,8 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  withtextshadow: {
+    boxShadow: '0px 0px 1px 1px #ffc107',
+    textShadow: '1px 2px 0px rgba(15, 14, 14, 0.733)'
+  }
 });

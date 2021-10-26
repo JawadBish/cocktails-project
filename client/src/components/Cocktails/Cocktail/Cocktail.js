@@ -63,7 +63,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         <Card className={styleclass.card}>
             <CardMedia className={styleclass.media} image={cocktail.selectedFile || defaultImg} name={cocktail.name} />
             <div className={styleclass.overlay}>
-                <Typography align="center" variant="h3" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bold" }} >{cocktail.name}</Typography>
+                <Typography align="center" variant="h4" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bold" }} >{cocktail.name}</Typography>
             </div>
             <div className={styleclass.overlay2}>
                 {(user?.result?.googleId === cocktail?.creator || user?.result?._id === cocktail?.creator) && (
@@ -72,9 +72,9 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
 
             </div>
             <ButtonBase onClick={openCocktail} >
-                <div className="mainFont">
-                    <Typography align="center" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', opacity: 1, fontWeight: "bolder" }}>Cocktail Details</Typography>
-                </div>
+
+                <Typography className={styleclass.withtextshadow} align="center" style={{ fontFamily: 'Zen Kurenaido', color: '#ffc107', textTransform: 'none', padding: '2px', margin: '3px', opacity: 1, fontWeight: "bolder" }}>Cocktail Details</Typography>
+
             </ButtonBase>
             <CardActions className={styleclass.cardActions}>
 
