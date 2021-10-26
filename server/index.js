@@ -20,7 +20,10 @@ app.use('/users', userRoutes);
 - Connect cluster -> connect your application -> then copy connection string to CONNECTION_URL in .env file.
 */
 
-
+//Check Backend 
+app.get('/', (req, res) => {
+    res.send("Hello Cocktails Application");
+})
 
 const PORT1 = (process.env.PORT || 5000);
 

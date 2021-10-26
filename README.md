@@ -64,5 +64,7 @@ heroku login <br>
 git init <br>
 heroku git:remote -a cocktails-project <br>
 <b> Modify and prepare for production : .gitignore (add node_modules) + add .env details + add Procfile +  </b> <br>
-
+git add . <br>
+git commit -am "make it better" <br>
+git push heroku master <br>
 </p>
