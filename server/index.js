@@ -26,9 +26,9 @@ app.get('/', (req, res) => {
 })
 
 const PORT1 = (process.env.PORT || 5000);
+const CONNECTION_URL = 'mongodb+srv://jawadbisharat:Nazareth2020@cluster0.4ewcc.mongodb.net/CocktailDB?retryWrites=true&w=majority'
 
-
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() =>
         app.listen(PORT1, () => console.log(`SERVER running on port: ${PORT1}`)))
     .catch((err) => console.log(err));
