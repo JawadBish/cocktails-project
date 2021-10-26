@@ -57,9 +57,9 @@ Cocktails Menu Branches :
 <li> Client : npm install --save react-google-font-loader<br>  </li>
 
 <ul> <b>Deployment </b> </ul>
-<p> Deploy App - BE Heroku - FE Netlify <br>
+<p> Deploy App - BE Heroku  <br>
 - Check Heroku :  heroku -v <br>
-- Server Dir Command Line : <br>
+- Server Side  Command Line : <br>
 heroku login <br>
 git init <br>
 heroku git:remote -a cocktails-project <br>
@@ -67,4 +67,7 @@ heroku git:remote -a cocktails-project <br>
 git add . <br>
 git commit -am "make it better" <br>
 git push heroku master <br>
+<hr>
+<p> Deploy App - FE Netlify  <br>
+<p> Change client\src\api\index.js -> url </p>
 </p>
