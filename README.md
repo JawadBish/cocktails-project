@@ -55,3 +55,14 @@ Cocktails Menu Branches :
 <ul> <b>Desgin </b> </ul>
 <p> Design application and small fixes and preparation for deployment. </p>
 <li> Client : npm install --save react-google-font-loader<br>  </li>
+
+<ul> <b>Deployment </b> </ul>
+<p> Deploy App - BE Heroku - FE Netlify <br>
+- Check Heroku :  heroku -v <br>
+- Server Dir : <br>
+heroku login <br>
+git init <br>
+heroku git:remote -a cocktails-project <br>
+<b> Modify and prepare for production : .gitignore (add node_modules) + add .env details + add Procfile +  </b> <br>
+
+</p>
