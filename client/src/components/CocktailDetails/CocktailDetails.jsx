@@ -43,15 +43,21 @@ console.log("RECO" , recommendedCocktails)
     <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={8}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2">{cocktail.name}</Typography>
-          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '7px'  }} />
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2"> Tags : {cocktail.tags.map((tag) => `#${tag} `)}</Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2"> Ingredients: {cocktail.ingredients.map((ingredient) => `#${ingredient} `)}</Typography>
-          <Typography gutterBottom variant="body1" component="p"> Recipe :{cocktail.recipe}</Typography>
-          <Typography variant="h6">Created by: {cocktail.creator}</Typography>
-          <Typography variant="body1">Created Date : {moment(cocktail.createdAt).fromNow()}</Typography>
-          <Divider style={{ margin: '20px 0' }} />
+          <Typography variant="h3" component="h3" style={{ textTransform: 'none', backgroundColor: '#ffc107', color: '#FFFFFF', opacity: 1, fontWeight: "bolder" }} >{cocktail.name}</Typography>
+          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '2px'  }} />
 
+          <Typography gutterBottom variant="body" color="textSecondary" component="h2">{cocktail.ingredients.map((ingredient) => ` | ${ingredient} | `) 
+          }</Typography>
+          <Typography gutterBottom variant="body1" component="p"> {cocktail.recipe}</Typography>
+          
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2"  
+          style={{textTransform: 'none', background : '#ffc107', color:'#FFFFFF', fontWeight: 'bolder' }}
+          > {cocktail.tags.map((tag) => `#${tag} `)}</Typography>
+
+          {/* <Typography variant="h6">Created by: {cocktail.creator}</Typography> */}
+          {/* <Typography variant="body1">Created Date : {moment(cocktail.createdAt).fromNow()}</Typography> */}
+          {/* <Divider style={{ margin: '20px 0' }} /> */}
+          
         </div>
         <div className={classes.imageSection}>
           <img className={classes.media} src={cocktail.selectedFile ? cocktail.selectedFile : altImage } alt={cocktail.name} />
@@ -59,21 +65,21 @@ console.log("RECO" , recommendedCocktails)
       </div>
       {recommendedCocktails.length > 0 && (
         <div className={classes.section}>
-          <Typography gutterBottom variant="h5">You might also like:</Typography>
-          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '3px'  }} />
+          <Divider style={{ margin: '20px 0', background : '#ffc107',  height: '1px'  }} />
+          <Typography  style={{textTransform: 'none', background : '#FFFFFF', color:'#ffc107' }} gutterBottom variant="h6">You might also like:</Typography>
           <div className={classes.recommendedPosts}>
             {recommendedCocktails.map(({ name, creator, likes, _id,tags }) => (
-              <div style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openCocktail(_id)} key={_id}>
-                <Typography gutterBottom variant="subtitle2">{name}</Typography>
-                <Typography gutterBottom variant="subtitle2">{creator}</Typography>
-                <Typography gutterBottom variant="subtitle1">Likes: {likes.length}</Typography>
-                <Typography gutterBottom variant="subtitle2">{tags.map((tag) => `#${tag}`)}</Typography>
+              <div className={classes.related} style={{ margin: '20px', cursor: 'pointer' }} onClick={() => openCocktail(_id)} key={_id}>
+                <Typography  style={{textTransform: 'none', background : '#FFFFFF', color:'#ffc107' }} gutterBottom variant="subtitle2">{name}</Typography>
+                {/* <Typography gutterBottom variant="subtitle2">{creator}</Typography> */}
+                <Typography  style={{textTransform: 'none', background : '#FFFFFF', color:'#ffc107' }} gutterBottom variant="subtitle1">Likes: {likes.length}</Typography>
+                <Typography  style={{textTransform: 'none', background : '#FFFFFF', color:'#ffc107' }} gutterBottom variant="subtitle2">{tags.map((tag) => `#${tag} `)}</Typography>
               </div>
             ))}
           </div>
         </div>
       )}
-      <Button onClick={() => history.goBack()}>Back</Button>
+      <Button  style={{textTransform: 'none', background : '#ffc107', color:'#FFFFFF', fontWeight: 'bolder' }} onClick={() => history.goBack()}>Back</Button>
     </Paper>
   
   );

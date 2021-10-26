@@ -40,4 +40,8 @@ export default makeStyles((theme) => ({
     loadingPaper: {
         display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
     },
+    related: {
+        boxShadow: '1px 2px 2px 2px #ffc107',
+        padding: '10px'
+    }
 }));
