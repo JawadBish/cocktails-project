@@ -69,5 +69,7 @@ git commit -am "make it better" <br>
 git push heroku master <br>
 <hr>
 <p> Deploy App - FE Netlify  <br>
-<p> Change client\src\api\index.js -> url </p>
+<p> Change client\src\api\index.js -> url </p> <br>
+npm run build <br>
+drag and drop build folder to netlify.
 </p>
