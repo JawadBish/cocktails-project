@@ -1,7 +1,7 @@
 # Cocktails Project
 
 This Project will contain recipes and ingredients for speciall cocktails. <br>
-URL : https://jcocktails-app.netlify.app/
+URL : https://barso.netlify.app
 
 ![image](https://user-images.githubusercontent.com/22063155/138794628-63c6b735-7608-43ab-a4cc-beb03444a5e7.png)
 
